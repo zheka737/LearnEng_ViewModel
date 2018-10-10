@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/WCFContact_Server?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8080/WCFContact_Server?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" />
+  <xs:complexType name="UserDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserSettingsGUID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserDTO" nillable="true" type="tns:UserDTO" />
+  <xs:complexType name="DTO">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="DTO" nillable="true" type="tns:DTO" />
+  <xs:complexType name="UserDictionaryEntryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DictionaryGUID" type="ser:guid" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="StatusOfLearning" type="q1:StatusOfLearning" />
+          <xs:element minOccurs="0" name="UserGroupsGUID" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="UsersGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="WordOfDictionary" nillable="true" type="tns:DictionaryEntryDTO" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserDictionaryEntryDTO" nillable="true" type="tns:UserDictionaryEntryDTO" />
+  <xs:complexType name="DictionaryEntryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedByUser" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateOfAdding" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateOfLastChange" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="LanguageOfTranslation" type="q2:Languages" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="LanguageOfWord" type="q3:Languages" />
+          <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Transcription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Translation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UsersGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="VacabulariesGUID" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="Word" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DictionaryEntryDTO" nillable="true" type="tns:DictionaryEntryDTO" />
+  <xs:complexType name="AddedSharedUserGroupDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserGroupsGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="UsersGUID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddedSharedUserGroupDTO" nillable="true" type="tns:AddedSharedUserGroupDTO" />
+  <xs:complexType name="IntegratedVacabularyEntryDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="LanguageOfTranslation" type="q4:Languages" />
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="LanguageOfWord" type="q5:Languages" />
+          <xs:element minOccurs="0" name="Translation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VacabularyGUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Word" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IntegratedVacabularyEntryDTO" nillable="true" type="tns:IntegratedVacabularyEntryDTO" />
+  <xs:complexType name="UserGroupDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Shared" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UsersGUID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserGroupDTO" nillable="true" type="tns:UserGroupDTO" />
+  <xs:complexType name="UserSettingsDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="DefaultLanguageForLearning" type="q6:Languages" />
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" minOccurs="0" name="NativeLanguageOfUser" type="q7:Languages" />
+          <xs:element minOccurs="0" name="WithoutSound" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserSettingsDTO" nillable="true" type="tns:UserSettingsDTO" />
+  <xs:complexType name="VacabularyDTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VacabularyDTO" nillable="true" type="tns:VacabularyDTO" />
+  <xs:complexType name="ArrayOfUserGroupDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroupDTO" nillable="true" type="tns:UserGroupDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroupDTO" nillable="true" type="tns:ArrayOfUserGroupDTO" />
+  <xs:complexType name="ArrayOfDictionaryEntryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DictionaryEntryDTO" nillable="true" type="tns:DictionaryEntryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDictionaryEntryDTO" nillable="true" type="tns:ArrayOfDictionaryEntryDTO" />
+  <xs:complexType name="ArrayOfUserDictionaryEntryDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDictionaryEntryDTO" nillable="true" type="tns:UserDictionaryEntryDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserDictionaryEntryDTO" nillable="true" type="tns:ArrayOfUserDictionaryEntryDTO" />
+</xs:schema>

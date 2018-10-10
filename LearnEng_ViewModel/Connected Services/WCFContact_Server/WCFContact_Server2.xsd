@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LearnEng_Server.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="StatusOfLearning">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empty" />
+      <xs:enumeration value="Learned" />
+      <xs:enumeration value="OnRepeat" />
+      <xs:enumeration value="NotLearnedYet" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusOfLearning" nillable="true" type="tns:StatusOfLearning" />
+  <xs:simpleType name="Languages">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empty" />
+      <xs:enumeration value="Rus" />
+      <xs:enumeration value="Eng" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Languages" nillable="true" type="tns:Languages" />
+</xs:schema>
